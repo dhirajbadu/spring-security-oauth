@@ -51,13 +51,4 @@ public class CustomAuthenticationManager implements AuthenticationManager {
             throw new AuthenticationServiceException(var4.getMessage(), var4);
         }
     }
-
-    public boolean supports(Class<?> authentication) {
-        return BearerTokenAuthenticationToken.class.isAssignableFrom(authentication);
-    }
-
-    public void setJwtAuthenticationConverter(Converter<Jwt, ? extends AbstractAuthenticationToken> jwtAuthenticationConverter) {
-        Assert.notNull(jwtAuthenticationConverter, "jwtAuthenticationConverter cannot be null");
-        this.jwtAuthenticationConverter = jwtAuthenticationConverter;
-    }
 }
